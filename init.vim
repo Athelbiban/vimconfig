@@ -58,7 +58,8 @@ set ffs=unix,dos,mac
 "По звездочке не прыгать на следующее найденное, а просто подсветить
 nnoremap * *N
 "Выключить подсветку: повесить на горячую клавишу Ctrl-F8
-nnoremap <C-F8> :nohlsearch<CR>
+"nnoremap <F8> :nohlsearch<CR>
+:map <F8> <Esc>:nohlsearch<CR>
 
 "Плагины
 call plug#begin()
