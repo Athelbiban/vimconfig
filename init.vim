@@ -61,6 +61,14 @@ nnoremap * *N
 "nnoremap <F8> :nohlsearch<CR>
 :map <F8> <Esc>:nohlsearch<CR>
 
+"При перемещении вверх и вниз центровать курсор на середине экрана
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+"При перемещении по поиску цетровать курсор на середине экрана
+nnoremap n nzz
+nnoremap N Nzz
+
 "Плагины
 call plug#begin()
 Plug 'preservim/NERDTree'
