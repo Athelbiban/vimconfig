@@ -57,9 +57,10 @@ set ffs=unix,dos,mac
 
 "По звездочке не прыгать на следующее найденное, а просто подсветить
 nnoremap * *N
-"Выключить подсветку: повесить на горячую клавишу Ctrl-F8
+"Выключить подсветку: повесить на горячую клавишу F8
 "nnoremap <F8> :nohlsearch<CR>
-:map <F8> <Esc>:nohlsearch<CR>
+":map <F8> <Esc>:nohlsearch<CR>
+nnoremap <silent><F8> :noh<CR>
 
 "При перемещении вверх и вниз центровать курсор на середине экрана
 nnoremap <C-d> <C-d>zz
@@ -72,14 +73,57 @@ nnoremap N Nzz
 "Плагины
 call plug#begin()
 Plug 'preservim/NERDTree'
-" Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/ap/vim-css-color'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
-imap jj <Esc>
-" imap оо <Esc> почему-то тормозит буква 'о'
+"Перемещение по визуальным линиям, а не по логичиским
+nmap j gjzz
+nmap k gkzz
 
+"Перемещение от начала строки к концу
+nmap H ^
+nmap L $
+
+"Выход из режима вставки на русской раскладке Ctrl-х
+imap <C-х> <Esc>
+
+"Выход из vim с сохранением и без на русской раскладке
+nmap ЯЯ ZZ
+nmap ЯЙ ZQ
+
+"Курсор всегда в центре экрана
+"set so=999
+"Подсветка строки, на которой находиться курсор
+set cursorline
+set nostartofline
+hi CursorLine cterm=underline
+
+"set keymap=russian-jcukenwin
+
+"Удалить пустые строки на Shift-F1
+nnoremap <S-F1> :g/^$/d<CR>
+
+"Системный буфер обмена на Shift - Y / P
+noremap <S-Y> "+y
+
+"Перечитать .vimrc / init
+noremap <F4> :source ~/.config/nvim/init.vim<CR>
+"Открыть init.vim через Shift + <F4>
+noremap <S-F4> :edit ~/.config/nvim/init.vim<CR>
+"Включ. и отключ. показа сторок обычных и релативных на <F5>
+nnoremap  <silent> <F5> :exec &nu==&rnu? "se nu!" : "se rnu!"<cr>
+"Проверка орфографии для русского и английского языков (чет пока не работает)
+nnoremap <silent> <F11> :set spell!<CR>
+inoremap <silent> <F11> <C-O> :set spell!<CR>
+
+"Сохранение Ctrl + s
+inoremap <C-s> <Esc>:w<CR>
+noremap <C-s> <Esc>:w<CR>
+
+"Ассоциация русских и латинских символов
+"для навигации и команд в любой раскладке
 map й q
 map ц w
 map у e
@@ -146,3 +190,4 @@ map Т N
 map Ь M
 map Б <
 map Ю >
+
