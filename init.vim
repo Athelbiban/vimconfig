@@ -76,6 +76,9 @@ Plug 'preservim/NERDTree'
 "Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/ap/vim-css-color'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 "Перемещение по визуальным линиям, а не по логичиским
@@ -111,7 +114,7 @@ noremap <S-Y> "+y
 "Перечитать .vimrc / init
 noremap <F4> :source ~/.config/nvim/init.vim<CR>
 "Открыть init.vim через Shift + <F4>
-noremap <S-F4> :edit ~/.config/nvim/init.vim<CR>
+noremap <F6> :edit ~/.config/nvim/init.vim<CR>
 "Включ. и отключ. показа сторок обычных и релативных на <F5>
 nnoremap  <silent> <F5> :exec &nu==&rnu? "se nu!" : "se rnu!"<cr>
 "Проверка орфографии для русского и английского языков (чет пока не работает)
@@ -121,6 +124,12 @@ inoremap <silent> <F11> <C-O> :set spell!<CR>
 "Сохранение Ctrl + s
 inoremap <C-s> <Esc>:w<CR>
 noremap <C-s> <Esc>:w<CR>
+
+"Горячие клавиши для телескопа (<leader> это `,`)
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 "Ассоциация русских и латинских символов
 "для навигации и команд в любой раскладке
