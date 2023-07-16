@@ -24,10 +24,10 @@ set novisualbell
 set mouse=a
 
 "Привязки
-let mapleader = ","
+let mapleader = " "
 nmap <leader>w :w!<CR>
-map <space> /
-map <C-space> ?
+"map <space> /
+"map <C-space> ?
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -35,7 +35,6 @@ map <C-l> <C-W>l
 map <leader>ss :setlocal spell!<CR>
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
-vnoremap <C-d> "+d
 nmap <F3> :NERDTreeToggle<CR>
 
 "Поиск
