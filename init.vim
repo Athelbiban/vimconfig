@@ -1,5 +1,4 @@
-"Табы и пробелы
-set expandtab
+"Табы и пробелы set expandtab
 set smarttab
 set tabstop=4
 set softtabstop=4
@@ -130,6 +129,17 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nmap баа ,ff
+nmap бап ,fg
+
+" Прокрутить лист курсором
+nmap яя zz
+nmap яи zb
+nmap яе zt
+
+"Перемещение в начало файла на русской раскладке
+nmap gп gg
+
 
 "Ассоциация русских и латинских символов
 "для навигации и команд в любой раскладке
