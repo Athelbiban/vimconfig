@@ -128,8 +128,8 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nmap баа ,ff
-nmap бап ,fg
+nmap <leader>аа <leader>ff
+nmap <leader>ап <leader>fg
 
 " Прокрутить лист курсором
 nmap яя zz
