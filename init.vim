@@ -61,12 +61,12 @@ nnoremap * *N
 nnoremap <silent><F8> :noh<CR>
 
 "При перемещении вверх и вниз центровать курсор на середине экрана
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
+"nnoremap <C-d> <C-d>zz
+"nnoremap <C-u> <C-u>zz
 
 "При перемещении по поиску цетровать курсор на середине экрана
-nnoremap n nzz
-nnoremap N Nzz
+"nnoremap n nzz
+"nnoremap N Nzz
 
 "Плагины
 call plug#begin()
@@ -77,11 +77,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.2' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
 call plug#end()
 
 "Перемещение по визуальным линиям, а не по логичиским
-nmap j gjzz
-nmap k gkzz
+nmap j gj
+nmap k gk
 
 "Перемещение от начала строки к концу
 nmap H ^
@@ -141,7 +143,6 @@ nmap gп gg
 
 "Скопировать весь текст в буфер Ctrl+a
 nmap <c-a> :%y+<cr>
-
 
 "Ассоциация русских и латинских символов
 "для навигации и команд в любой раскладке
